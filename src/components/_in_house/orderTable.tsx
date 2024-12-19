@@ -233,7 +233,7 @@ export default function OrdersTable() {
 
   return (
     <div className="w-full">
-      <h1 className="text-4xl font-medium mb-8">Orders</h1>
+      <h3 className="font-medium text-xl mb-4">Orders</h3>
       <div className="rounded-lg border">
         <Table>
           <TableHeader>

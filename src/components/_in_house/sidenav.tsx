@@ -1,5 +1,6 @@
 import { HomeIcon, MessageCircle, Users } from "lucide-react";
 import Image from "next/image";
+import { Settings } from "react-feather";
 
 const SideNav = () => {
   return (
@@ -34,7 +35,12 @@ const SideNav = () => {
             </div>
           </div>
         </div>
-        <Image src="icons/gear.svg" width={20} height={20} alt="gear_setting" />
+        <div className="group bg-transparent hover:bg-white hover:cursor-pointer transition-all rounded-[8px] p-2">
+          <Settings
+            size={20}
+            className="group-hover:text-[#115E56] text-[#CCFBEF]"
+          />
+        </div>
       </section>
       <section className="h-[40%]"></section>
     </div>
