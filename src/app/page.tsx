@@ -1,5 +1,6 @@
 import Glance from "@/components/_in_house/glance";
 import Insight from "@/components/_in_house/insight";
+import OrdersTable from "@/components/_in_house/orderTable";
 import {
   ChartPie,
   HomeIcon,
@@ -54,7 +55,7 @@ export default function Home() {
         </section>
         <section className="h-[40%]"></section>
       </div>
-      <div className="border-4 flex-grow border-yellow-400 min-h-full flex flex-col">
+      <div className="flex-grow pb-8 min-h-full flex flex-col">
         {/* UpperNav */}
         <nav className="flex px-6 py-4 mb-3 gap-x-1 items-center border-[#DCDFE4] border-b-[1px] shadow-sm">
           <div className="flex items-center gap-x-2 bg-transparent rounded-2xl group hover:bg-[#CCFBEF] px-2 py-1 hover:cursor-pointer">
@@ -83,9 +84,10 @@ export default function Home() {
           </div>
         </nav>
         <div className="overflow-y-scroll flex-grow px-4 pt-3">
-          <div className="rounded-2xl px-5 py-4 min-h-full shadow-md border-[1px] border-[#DCDFE4]">
+          <div className="rounded-2xl px-5 pt-4 pb-8 min-h-full shadow-md border-[1px] border-[#DCDFE4]">
             <Glance />
             <Insight />
+            <OrdersTable />
           </div>
         </div>
       </div>
