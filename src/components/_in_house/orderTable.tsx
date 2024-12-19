@@ -20,6 +20,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Link from "next/link";
 
 interface Order {
   id: string;
@@ -208,10 +209,12 @@ const columns: ColumnDef<Order>[] = [
     id: "actions",
     cell: () => {
       return (
-        <Button variant="ghost" size="sm" className="hover:bg-transparent">
-          View Chat
-          <ArrowUpRight className="ml-2 h-4 w-4" />
-        </Button>
+        <Link href="/chats">
+          <Button variant="ghost" size="sm" className="hover:bg-transparent">
+            View Chat
+            <ArrowUpRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
       );
     },
   },
