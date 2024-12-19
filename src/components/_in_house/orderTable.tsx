@@ -38,50 +38,50 @@ const data: Order[] = [
   {
     id: "1",
     product: {
-      name: "Product Name...",
+      name: "Premium Headphones",
       icon: "avatars/avatar.svg",
     },
-    date: "24 Apr '2024",
-    time: "10:24 AM",
-    timeSpent: "2h 5m",
-    orderValue: 120.21,
-    commission: 55,
+    date: "15 Mar '2024",
+    time: "09:17 AM",
+    timeSpent: "1h 45m",
+    orderValue: 89.99,
+    commission: 32,
   },
   {
     id: "2",
     product: {
-      name: "Product Name...",
+      name: "Wireless Keyboard",
       icon: "avatars/avatar.svg",
     },
-    date: "24 Apr '2024",
-    time: "10:24 AM",
-    timeSpent: "2h 5m",
-    orderValue: 120.21,
-    commission: 55,
+    date: "28 Feb '2024",
+    time: "02:45 PM",
+    timeSpent: "3h 20m",
+    orderValue: 154.5,
+    commission: 48,
   },
   {
     id: "3",
     product: {
-      name: "Product Name...",
+      name: "Gaming Mouse",
       icon: "avatars/avatar.svg",
     },
-    date: "24 Apr '2024",
-    time: "10:24 AM",
-    timeSpent: "2h 5m",
-    orderValue: 120.21,
-    commission: 55,
+    date: "07 Apr '2024",
+    time: "11:30 AM",
+    timeSpent: "0h 55m",
+    orderValue: 75.25,
+    commission: 28,
   },
   {
     id: "4",
     product: {
-      name: "Product Name...",
+      name: "USB-C Hub",
       icon: "avatars/avatar.svg",
     },
-    date: "24 Apr '2024",
-    time: "10:24 AM",
-    timeSpent: "2h 5m",
-    orderValue: 120.21,
-    commission: 55,
+    date: "19 Apr '2024",
+    time: "04:10 PM",
+    timeSpent: "2h 15m",
+    orderValue: 135.75,
+    commission: 42,
   },
 ];
 
@@ -93,7 +93,7 @@ const columns: ColumnDef<Order>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="hover:bg-transparent"
+          className="hover:bg-transparent px-0"
         >
           Product
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -123,7 +123,7 @@ const columns: ColumnDef<Order>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="hover:bg-transparent"
+          className="hover:bg-transparent px-0"
         >
           Date
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -148,7 +148,7 @@ const columns: ColumnDef<Order>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="hover:bg-transparent"
+          className="hover:bg-transparent px-0"
         >
           Time spent
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -163,7 +163,7 @@ const columns: ColumnDef<Order>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="hover:bg-transparent"
+          className="hover:bg-transparent px-0"
         >
           Order Value
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -187,7 +187,7 @@ const columns: ColumnDef<Order>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="hover:bg-transparent"
+          className="hover:bg-transparent px-0"
         >
           Commission
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -234,14 +234,17 @@ export default function OrdersTable() {
   return (
     <div className="w-full">
       <h3 className="font-medium text-xl mb-4">Orders</h3>
-      <div className="rounded-lg border">
+      <div className="rounded-lg border border-[#DCDFE4]">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow
+                key={headerGroup.id}
+                className="bg-[#F9FAFB] hover:bg-[#F3F4F6]"
+              >
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} className="text-left">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -260,9 +263,10 @@ export default function OrdersTable() {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  className="hover:bg-[#F3F4F6]"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className="text-left">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
@@ -272,7 +276,7 @@ export default function OrdersTable() {
                 </TableRow>
               ))
             ) : (
-              <TableRow>
+              <TableRow className="hover:bg-[#F3F4F6]">
                 <TableCell
                   colSpan={columns.length}
                   className="h-24 text-center"
