@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpDown, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpDown, ArrowUpRight } from "lucide-react";
 import {
   ColumnDef,
   flexRender,
