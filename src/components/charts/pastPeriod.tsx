@@ -26,7 +26,7 @@ const options = {
 
 const PastPeriodChart = () => {
   return (
-    <div>
+    <div className="w-1/3">
       <Chart
         chartType="ColumnChart"
         width="100%"

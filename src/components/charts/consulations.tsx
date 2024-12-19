@@ -16,6 +16,7 @@ const data = [
 const options = {
   title: "Consultations",
   seriesType: "line",
+  chartArea: { width: "72%" },
   series: {
     2: { type: "bars", color: "#FFF7D4" }, // Experts Online as Bars
     0: { color: "#A1A1A1", lineDashStyle: [4, 4] }, // Incoming (Dashed)

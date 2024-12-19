@@ -6,7 +6,7 @@ const Insight = () => {
   return (
     <div className="pt-8 mb-8">
       <h3 className="font-medium text-xl mb-4">Insights</h3>
-      <section className="flex gap-x-3">
+      <section className="flex">
         <ConsultationChart />
         <PastPeriodChart />
         <ForecastCard />

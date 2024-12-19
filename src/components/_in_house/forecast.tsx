@@ -4,7 +4,7 @@ import React from "react";
 const ForecastCard = () => {
   return (
     <div
-      className="p-6 rounded-3xl text-white shadow-sm"
+      className="p-6 rounded-3xl text-white shadow-sm max-w-56 flex-grow"
       style={{
         background: "linear-gradient(180deg, #15B79F 0%, #0E9382 100%)",
         boxShadow: "0px 5px 22px 0px #0000000A, 0px 0px 0px 1px #0000000F",
