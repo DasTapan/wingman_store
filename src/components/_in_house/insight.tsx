@@ -1,7 +1,16 @@
+import ConsultationChart from "../charts/consulations";
+import PastPeriodChart from "../charts/pastPeriod";
+import ForecastCard from "./forecast";
+
 const Insight = () => {
   return (
     <div className="pt-8">
-      <h3 className="font-medium text-xl">Insights</h3>
+      <h3 className="font-medium text-xl mb-4">Insights</h3>
+      <section className="flex gap-x-3">
+        <ConsultationChart />
+        <PastPeriodChart />
+        <ForecastCard />
+      </section>
     </div>
   );
 };
