@@ -8,6 +8,8 @@ import {
   getSortedRowModel,
   SortingState,
   useReactTable,
+  PaginationState,
+  getPaginationRowModel,
 } from "@tanstack/react-table";
 import { useState } from "react";
 import Image from "next/image";
@@ -21,6 +23,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "../ui/pagination";
 
 interface Order {
   id: string;
@@ -414,15 +425,22 @@ const columns: ColumnDef<Order>[] = [
 
 export default function OrdersTable() {
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [pagination, setPagination] = useState<PaginationState>({
+    pageIndex: 0,
+    pageSize: 5,
+  });
 
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    onPaginationChange: setPagination,
     onSortingChange: setSorting,
     state: {
       sorting,
+      pagination,
     },
   });
 
@@ -482,6 +500,49 @@ export default function OrdersTable() {
             )}
           </TableBody>
         </Table>
+
+        <Pagination className="my-5">
+          <PaginationContent>
+            {/* Previous */}
+            <PaginationItem>
+              {!table.getCanPreviousPage() ? (
+                <PaginationPrevious
+                  href=""
+                  className="hover:cursor-not-allowed"
+                  aria-disabled
+                />
+              ) : (
+                <PaginationPrevious
+                  href=""
+                  onClick={() => table.previousPage()}
+                />
+              )}
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink
+                href=""
+                onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+                isActive={true}
+              >
+                {table.getState().pagination.pageIndex + 1}
+              </PaginationLink>
+            </PaginationItem>
+            <span className="mx-2">...</span>
+            {/* Next */}
+            <PaginationItem>
+              {!table.getCanNextPage() ? (
+                <PaginationNext
+                  href=""
+                  className="hover:cursor-not-allowed"
+                  aria-disabled
+                />
+              ) : (
+                <PaginationNext href="" onClick={() => table.nextPage()} />
+              )}
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
       </div>
     </div>
   );
