@@ -1,5 +1,9 @@
 const Page = () => {
-  return <div> order page Page</div>;
+  return (
+    <div className="flex-1 flex items-center justify-center bg-white">
+      orders
+    </div>
+  );
 };
 
 export default Page;
