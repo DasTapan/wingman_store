@@ -19,7 +19,7 @@ const systemMessage = {
 };
 
 const Page = () => {
-  const [messages, setMessages] = useState<any>([
+  const [messages, setMessages] = useState<any[]>([
     {
       message: "Hello, I'm ChatGPT! Ask me anything!",
       sentTime: "just now",
@@ -52,7 +52,7 @@ const Page = () => {
     // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
     // So we need to reformat
 
-    let apiMessages = chatMessages.map((messageObject: any) => {
+    const apiMessages = chatMessages.map((messageObject: any) => {
       let role = "";
       if (messageObject.sender === "ChatGPT") {
         role = "assistant";
