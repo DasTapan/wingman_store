@@ -21,7 +21,7 @@ const systemMessage = {
 const Page = () => {
   const [messages, setMessages] = useState<any[]>([
     {
-      message: "Hello, I'm ChatGPT! Ask me anything!",
+      message: "Hello, I'm ChatZilla! Ask me anything!",
       sentTime: "just now",
       sender: "ChatGPT",
     },
@@ -105,7 +105,9 @@ const Page = () => {
             className="p-4"
             scrollBehavior="smooth"
             typingIndicator={
-              isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null
+              isTyping ? (
+                <TypingIndicator content="ChatZilla is typing" />
+              ) : null
             }
           >
             {messages.map((msg: any, index: number) => (
