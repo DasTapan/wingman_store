@@ -1,5 +1,3 @@
-# Next.js Project with Charts, Fake Data, Table Sorting, and GPT Chat Integration
-
 ## Project Overview
 
 This is a Next.js project that showcases the use of:
@@ -30,7 +28,7 @@ This is a Next.js project that showcases the use of:
 ### Deployed Application
 
 The application is deployed on Vercel. You can access it here:
-[https://your-vercel-app-url.vercel.app](https://your-vercel-app-url.vercel.app)
+[https://wingman-store-five.vercel.app/](https://wingman-store-five.vercel.app/)
 
 ## Getting Started
 
